@@ -34,6 +34,18 @@ a, a:hover, a:visited {
 #header {
 	background-color: #9F2424;
 	color: #FFFFFF;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: .5em;
+	margin: 0;
+	text-align: center;
+}
+
+#content {
+	padding-top: 3em;
 }
 
 blockquote {
