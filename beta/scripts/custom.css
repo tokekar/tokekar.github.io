@@ -19,7 +19,7 @@ a, a:hover, a:visited {
 	margin-left: auto;
 	margin-right: auto;
 	padding: .3em .5em;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	box-shadow: .3em .3em .8em #dddddd;
 }
 
@@ -33,19 +33,8 @@ a, a:hover, a:visited {
 
 #header {
 	background-color: #9F2424;
+	padding: 1em;
 	color: #FFFFFF;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: .5em;
-	margin: 0;
-	text-align: center;
-}
-
-#content {
-	padding-top: 3em;
 }
 
 blockquote {
@@ -80,4 +69,19 @@ blockquote {
 a.menu-link:hover, a.menu-link {
 	color: #FFFFFF;
 	text-decoration: none;
+}
+
+.videowrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 1.5em;
+	height: 0;
+}
+
+.videowrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
