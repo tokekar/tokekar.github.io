@@ -3,7 +3,7 @@ OUTDIR=..
 PUBPARTDIR=pubs/part
 JSON=$(DATADIR)/pubs_autogen.json
 
-all: index pub-generator 
+all: index pub-generator clean
 
 index:
 	cat $(DATADIR)/header.part $(DATADIR)/about.part $(DATADIR)/news.part $(DATADIR)/research.part $(DATADIR)/publications.part $(DATADIR)/teaching.part $(DATADIR)/service.part $(DATADIR)/footer.part > $(OUTDIR)/index.html
