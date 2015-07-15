@@ -1,6 +1,7 @@
 import json
 import os
 import errno
+import argparse
 
 def createpartpub(entry,fileid):
     fileid.write("<a href=\"" + entry['id'] + ".html\">")
@@ -84,14 +85,19 @@ def createyoutubeembed(url):
 def main():
 
     parser = argparse.ArgumentParser('Pub Generator')
-    parser.add_argument('header', help='path to the header.part file', type=str)
-    parser.add_argument('footer', help='path to the footer.part file', type=str)
-    parser.add_argument('pubpartdir', help='path to the directory which will contain the part files for publications', type=str)
+    parser.add_argument('header', help='path to the input header.part file', type=str)
+    parser.add_argument('footer', help='path to the input footer.part file', type=str)
+    parser.add_argument('json', help='path to the input json file containing the publication data', type=str)
+    parser.add_argument('pubpartdir', help='path to the directory which will contain the output part files for publications', type=str)
     parser.add_argument('outdir', help='path to the output directory', type=str)
-    parser.add_argument('json', help='path to the json file containing the publication data', type=str)
+    parser.add_argument('publications', help='path to the output publications file', type=str)
     args = parser.parse_args()
 
     data = loaddata(args.json)
+    
+    pubfileid = open(args.publications,'w')
+    pubfileid.write(open(args.header,'r').read())
+    pubfileid.write("<div class=\"panel\">")
 
     for val in data:
         key = val['id']
@@ -103,6 +109,13 @@ def main():
         partpubfile = open(args.pubpartdir+"/"+key+".part",'w')
         partpub = createpartpub(val,partpubfile)
         partpubfile.close()
+
+        pubfileid.write("<p>")
+        pubfileid.write(open(args.pubpartdir+"/"+key+".part",'r').read())
+        pubfileid.write("</p>")
+
+    pubfileid.write("</div>")
+    pubfileid.write(open(args.footer,'r').read())
 
 
 if __name__ == "__main__":
