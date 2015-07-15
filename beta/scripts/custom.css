@@ -2,11 +2,11 @@ body {
 	background-color: #F0F0F0;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 900px;
+	max-width: 1024px;
 }
 
 body, .pure-g [class *= "pure-u"] {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'EB Garamond', sans-serif;
 }
 
 a, a:hover, a:visited {
@@ -15,10 +15,11 @@ a, a:hover, a:visited {
 }
 
 .panel {
-	margin-top: 10px;
+	margin-top: .5em;
+	margin-bottom: .5em;
 	margin-left: auto;
 	margin-right: auto;
-	padding: .3em .5em;
+	padding: .5em 1em;
 	background-color: #FFFFFF;
 	box-shadow: .3em .3em .8em #dddddd;
 }
@@ -29,6 +30,37 @@ a, a:hover, a:visited {
 
 .panel-right {
 	margin-right: 0em;
+}
+
+.dl-inline dt {
+	float: left;
+	clear: left;
+	width: 3em;
+	text-align: right;
+	font-weight: bold;
+}
+
+.dl-inline dd {
+	margin-left: 3.5em;
+	padding-bottom: .5em;
+}
+
+.dl-about-panel dt {
+	width: 20%;
+}
+
+.dl-about-panel dd {
+	margin-left: 25%;
+	padding-bottom: 0;
+}
+
+.dl-travel-panel dt {
+	width: 48%;
+}
+
+.dl-travel-panel dd {
+	margin-left: 53%;
+	padding-bottom: 0;
 }
 
 #header {
@@ -59,6 +91,8 @@ blockquote {
 	padding: 0px;
 	margin: 0px auto;
 	text-align: center;
+	font-weight: bold;
+	font-size: 125%;
 }
 
 .menu-item {
