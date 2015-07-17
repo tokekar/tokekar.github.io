@@ -1,0 +1,66 @@
+<h2>Placement and Motion Planning Algorithms for Robotic Sensing Systems</h2>
+<h3>Pratap Tokekar</h3>
+<h3>Adviser: Prof. Volkan Isler</h3>
+<h4>tokekar at cs.umn.edu</h4>
+
+<a href="tokekar_dissertation.pdf">Dissertation</a> <br />
+<a href="thesisdefense_final.pdf">Slides</a>
+
+<p>
+Recent technological advances are making it possible to build teams of
+sensors and robots that can sense data from hard-to-reach places at
+unprecedented spatio-temporal scales. Robotic sensing systems hold the
+potential to revolutionize a diverse collection of applications such
+as agriculture, environmental monitoring, climate studies, security
+and surveillance in the near future. In order to make full use of this
+technology, it is crucial to complement it with efficient algorithms
+that plan for the sensing in these systems. In this dissertation, we
+develop new sensor planning algorithms and present prototype robotic
+sensing systems.
+</p>
+
+<p>
+In the first part of this dissertation, we study two problems on
+placing stationary sensors to cover an environment. Our objective is
+to place the fewest number of sensors required to ensure that every
+point in the environment is covered. In the first problem, we say a
+point is covered if it is seen by sensors from all orientations. The
+environment is represented as a polygon and the sensors are modeled as
+omnidirectional cameras. Our formulation, which builds on the
+well-known art gallery problem, is motivated by practical applications
+such as visual inspection and video-conferencing where seeing objects
+from all sides is crucial. In the second problem, we study how to
+deploy bearing sensors in order to localize a target in the
+environment. The sensors measure noisy bearings towards the target
+which can be combined to localize the target. The uncertainty in
+localization is a function of the placement of the sensors relative to
+the target. For both problems we present (i) lower bounds on the
+number of sensors required for an optimal algorithm, and (ii)
+algorithms to place at most a constant times the optimal number of
+sensors. 
+</p>
+
+<p>
+In the second part of this dissertation, we study motion planning
+problems for mobile sensors. We start by investigating how to plan the
+motion of a team of aerial robots tasked with tracking targets that
+are moving on the ground. We then study various coverage problems that
+arise in two environmental monitoring applications: using robotic
+boats to monitor radio-tagged invasive fish in lakes, and using ground
+and aerial robots for data collection in precision agriculture. We
+formulate the coverage problems based on constraints observed in
+practice. We also present the design of prototype robotic systems for
+these applications. In the final problem, we investigate how to
+optimize the low-level motion of the robots to minimize their energy
+consumption and extend the system lifetime.
+</p>
+
+<p>
+This dissertation makes progress towards building robotic sensing
+systems along two directions. We present algorithms with strong
+theoretical performance guarantees, often by proving our algorithms
+are optimal or that their costs are at most a constant factor away from
+the optimal values. We also demonstrate the feasibility and
+applicability of our results through system implementation and with
+results from simulations and extensive field experiments.
+</p>
