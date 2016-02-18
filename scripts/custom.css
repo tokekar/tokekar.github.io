@@ -37,13 +37,13 @@ a, a:hover, a:visited {
 .dl-inline dt {
 	float: left;
 	clear: left;
-	width: 3em;
+	width: 5em;
 	text-align: right;
 	font-weight: bold;
 }
 
 .dl-inline dd {
-	margin-left: 3.5em;
+	margin-left: 5.5em;
 	padding-bottom: .5em;
 }
 
