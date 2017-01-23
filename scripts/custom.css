@@ -62,7 +62,7 @@ a, a:hover, a:visited {
 
 .dl-travel-panel dd {
 	margin-left: 30%;
-	padding-bottom: 0;
+	padding-bottom: .5em;
 }
 
 #header {
