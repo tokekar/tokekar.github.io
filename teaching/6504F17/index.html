@@ -41,31 +41,24 @@
 <div class="panel">
 	<h2 class="section">Description</h2>
 	<p>
-	This course will focus on the principles of decision-making in robotics. The <a href="http://tokekar.com/teaching/4984-5984S17/index.html">motion planning course</a> in Spring '17 focused on the problem of how to go from point A to point B. In this course, we will examine higher-level algorithms that make decisions as to what points A and B should be (for example) depending on the task at hand. Typical tasks that we will use as prototypical examples are where robots as mobile sensors: <i>coverage, adaptive sampling, target tracking, spatial and spatio-temporal field estimation</i>. 
-	
-	<p>Specific research topics include:
+	This course will focus on the principles of decision-making in robotics. The <a href="http://tokekar.com/teaching/4984-5984S17/index.html">motion planning course</a> in Spring '17 focused on the problem of how to go from point A to point B. In this course, we will examine higher-level algorithms that make decisions as to what points A and B should be (for example) depending on the task at hand. Typical tasks that we will use as prototypical examples are where robots as mobile sensors. Specific research topics include:
 	<ul>
-		<li>Coverage: distributed voronoi coverage (Lloyd's algorithm), Gaussian Process spatial and spatio-temporal map estimation
-		<li>Route planning: Traveling Salesperson Problem and Orienteering</li>
-		<li>Information-theoretic path planning: Adaptive sampling, Multi-armed bandit problems, Optimal stopping problems</li>
+		<li><b>Coverage</b>: distributed voronoi coverage (Lloyd's algorithm), Gaussian Process spatial and spatio-temporal map estimation
+			<li><b>Route planning</b>: Traveling Salesperson Problem and Orienteering</li>
+			<li><b>Information-theoretic path planning</b>: Adaptive sampling, Multi-armed bandit problems, Optimal stopping problems</li>
 		<ul>
 			<li>Submodular optimization, mutual information, entropy, Gaussian processes</li>
 		</ul>
-		<li>Adversarial planning: Min-max games, Cooperative games, Decentralized Partially Observable Markov Decision Processes (Dec-POMDPs)</li>
-		<li>Reinforcement learning</li>
+		<li><b>Adversarial planning</b>: Min-max games, Cooperative games, Decentralized Partially Observable Markov Decision Processes (Dec-POMDPs)</li>
+		<li>Reinforcement learning, Deep RL</li>
 	</ul>
 	
-The first part of the course will consist of background lectures by the instructor. This will be followed by an in-depth study of recent research papers which will be led by the students. The students will also work on a research-oriented course project. The goal of the course is to understand and critique research papers, identify open problems, and initiate progress towards solving them. 
+The first part of the course will consist of background lectures by the instructor. Most of the lectures will be based on foundational papers. This will be followed by an in-depth study of recent research papers which will be led by the students. The students will also work on a research-oriented course project. The goal of the course is to understand and critique research papers, identify open problems, and initiate progress towards solving them. An ideal outcome is for students to write a research paper at the end of the course.
 	</p>
 
-
-	<p>
-	This course is a seminar-style course featuring student-led discussions of recent research papers. See more information on paper presentations <a href="#presentations">here</a>. In order to make the course self-contained, I will give introductory lectures that cover background material.
-	</p>
-
-	<p>
-	We will have weekly assignments, a semester-long group project, and an individual term paper. The assignments will be a mix of writing and implementation exercises. You will also have to write <a href="#reviews">reviews</a> for papers covered in the class.
-	</p>
+	<!--p>
+	We will have regular assignments, a semester-long group project, and an individual term paper. The assignments will be a mix of writing and implementation exercises. You will also have to write <a href="#reviews">reviews</a> for papers covered in the class.
+	</p-->
 
 	<p>
 	The students will also work in groups on a research-oriented course project. More information about the project is <a href="#project">here</a>.
@@ -96,7 +89,7 @@ The first part of the course will consist of background lectures by the instruct
 	<a id="assignments"></a> 
 	<h2 class="section">Assignments</h2>
 	<p>
-	Details will posted on canvas. The assignments will be a mix of theory questions, and programming/implementation problems.
+	Details will posted on canvas. 
 	</p>
 </div>
 
@@ -108,17 +101,6 @@ The first part of the course will consist of background lectures by the instruct
 	Each student will lead the discussion on tbd papers choice during the semester. You may choose a paper from the list given <a href="">here</a>.
 	</p>
 	
-	<!--p>
-	You are also encouraged to search for papers on your own, preferably from a top robotics journals (<a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8860">T-RO</a>, <a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8856">T-ASE</a>, <a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=100">RAM</a>, <a href="http://ijr.sagepub.com/">IJRR</a>, <a href="http://www.springer.com/engineering/robotics/journal/10514">AURO</a>) and conferences (<a href="http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1000639">ICRA</a>, <a href="http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1000393">IROS</a>, <a href="http://www.roboticsconference.org/">RSS</a>, <a href="http://www.wafr.org/">WAFR</a>). You may also present papers from related research areas (e.g., Computer Vision, Machine Learning, Controls, Computational Geometry) if they are relevant for the course. If so, please discuss with me if you have specific ideas. I will announce the mechanism for paper selection in the first two weeks of classes.
-	</p2-->
-
-	<!--p>
-	Each presentation must be at most 45 minutes long, plus time for discussions during and after the presentation. The nature of presentation --- powerpoint, whiteboard, interpretive dance --- is up to you. Depending on the paper, you may have to spend a significant portion of the time covering the background material. 
-	</p-->
-
-	<!--p>
-	One day (24 hours) before your scheduled presentation, you must post on the class forum a short summary (~400 words) in your own words of the paper you will be presenting. 
-	</p-->
 </div>
 
 
@@ -148,7 +130,6 @@ The first part of the course will consist of background lectures by the instruct
 		<li>a list of shortcomings/weaknesses of the paper; and </li>
 		<li>a list of open problems and possible future work related to the paper.</li>
 	</ol>
-	The review can be at most 5 pages, 10pt.
 	</p>
 </div>
 
@@ -164,7 +145,7 @@ The first part of the course will consist of background lectures by the instruct
 	</p>
 
 	<p>
-	Prior background in robotics is helpful, but not required. We will aim to keep the material self-contained. I will cover the relevant background materials in lectures. 
+	Prior background in robotics is helpful, but not required. 
 	</p>
 </div>
 
