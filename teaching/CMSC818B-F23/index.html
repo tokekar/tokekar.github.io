@@ -1,0 +1,587 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMSC 818B: Decision-Making for Robotics - Fall 2023</title>
+
+<link rel="stylesheet" href="../../scripts/custom.css">
+
+</head>
+
+<body>
+<div id="header">
+	<ul class="menu">
+			<li class="menu-item"><a href="#grading" class="menu-link">Grading</a></li>
+			<li class="menu-item"><a href="#schedule" class="menu-link">Schedule</a></li>
+			<li class="menu-item"><a href="#grading" class="menu-link">Grading</a></li>
+			<li class="menu-item"><a href="#miniproject1" class="menu-link">Mini-Project 1</a></li>
+			<li class="menu-item"><a href="#miniproject2" class="menu-link">Mini-Project 2</a></li>
+		</ul>
+</div>
+
+<div class="panel">
+	<h2 class="section">CMSC 818B: Decision-Making for Robotics - Fall 2020</h2>
+
+	<ul>
+		<li><b>Instructor:</b> <a href="http://pratap.tokekar.com/">Pratap Tokekar</a> (lastname at umd.edu but use Piazza for general questions)</li>
+		<!--li><b>Lectures:</b> Tue &amp; Thu, 2:00 PM - 3:15 PM on Zoom. URL posted on ELMS. Lectures will be recorded and uploaded on ELMS (typically within hours of lecture).</li-->
+		<!--li><b>Teaching Assistant:</b> <a href="https://www.cs.umd.edu/people/dhami">Harnaik Dhami</a></li-->
+	</ul>
+
+	<blockquote>
+	Class announcements, assignments, and due dates will be posted on ELMS. <!--Use <a href="https://piazza.com/umd/fall2020/cmsc818b/home">Piazza</a> for any course-related discussion and for messaging the course staff. Piazza allows you to post a private message that only the instructor and the TA can see. Use that functionality instead of e-mail. If its a question that the rest of the class can benefit, then please make it public.-->
+	</blockquote>
+
+</div>
+
+<div class="panel">
+	<h2 class="section">Description</h2>
+	<p>
+	This course will focus on the principles of decision-making in robotics. <a href="http://www.cs.umd.edu/class/spring2019/cmsc818N/">Motion planning </a> focuses on the problem of <i>how</i> to go from point A to point B. In this course, we will examine higher-level algorithms that <i>make decisions</i> as to what points A and B should be depending on the task at hand. In standard motion planning, the goal location is given as input. In constrast, in the decision-making problems we will consider in this course, the goal locations(s) will be the output. In fact, most scenarios we will study require making sequential decisions where the output is a series of goal location(s) (or actions or tasks and so on) and where decisions we make in the past may influence the options available at a future instance.</p>
+
+<p>Most of the lectures will be based on research papers and discussion of open research problems. The students will also work on a research-oriented course project. The goal of the course is to understand, critique, and implement research papers, identify open problems, and make progress towards solving them. An ideal outcome is for students to write a research paper at the end of the course.
+	</p>
+
+	<p>We will have a mix of traditional lectures conducted by the instructor. A significant portion of the course will revolve around discussion of recent research papers (led by the students). We are also planning to have guest lectures from academia and industry.</p>
+
+
+<blockquote>
+	This is a qualifying course in artificial intelligence.
+	</blockquote>
+
+</div>
+
+<div class="panel">
+	<a id="textbook"></a>
+	<h2 class="section">Textbook</h2>
+	<p>
+	No required textbook. Course materials will be drawn from research papers and notes that will be posted online on ELMS.
+	</p>
+</div>
+
+<div class="panel">
+	<a id="schedule"></a>
+	<h2 class="section">Schedule</h2>
+	<p>Class schedule given <a href="https://docs.google.com/spreadsheets/d/1nVgOLriTfZQcolewX2LLshUYpp9bonA5T7W-pKR4X5I/edit?usp=sharing">here</a>.</p>
+
+	<p>
+	Topics that will be covered include (but are not limited to): <i>Foundation Models for Robotics; Pre-training for Large Scale Learning; Joint Perception and Planning; Differentiable Optimization; Deep reinforcement learning; Graph Neural Networks; Information-Theoretic Path Planning (mutual information, entropy, submodularity); Active Perception.</i></p>
+</div>
+
+<!--div class="panel">
+	<a id="grading"></a>
+	<h2 class="section">Grading</h2>
+	<p>This is still tentative and subject to change. Evaluation will be composed of the following:
+	<ul>
+		<li><b>Exam (30%)</b></li>
+		<li><b>Research Project (25%)</b></li>
+			<ul>
+				<li>Pitch (2%)</li>
+				<li>Proposal (4%)</li>
+				<li>Presentation (9%)</li>
+				<li>Final report (10%)</li>
+			</ul>
+		<li><b>Mini-projects (20%)</b></li>
+			<ul>
+				<li>Mini-project 1 (10%)</li>
+				<li>Mini-project 2 (10%)</li>
+			</ul>
+		<li><b>Assignments (5%)</b></li>
+		<li><b>Presentation (10%)</b></li>
+			<ul>
+				<li>Post summary (2%)</li>
+				<li>Post draft video (2%)</li>
+				<li>Actual presentation (6%)</li>
+			</ul>
+		<li><b>Class participation (10%)</b></li>
+			<ul>
+				<li>Post questions on 5 summaries before presentations (5%)</li>
+				<li>Peer review mini-project 1 (1%)</li>
+				<li>Peer review mini-project 2 (1%)</li>
+				<li>Peer review project presentation (3%)</li>
+			</ul>
+	</ul>
+	Details of each are given below.
+	</p>
+</div>
+
+<div class="panel">
+	<a id="exam"></a>
+	<h2 class="section">Exam</h2>
+
+	<p>
+	This will be in the style of a take-home exam. You will be given 1-2 days (subject to change) to solve the exam and upload your solutions. The exam will likely be in November.
+</p>
+</div>
+
+<div class="panel">
+	<a id="project"></a>
+	<h2 class="section">Research Project</h2>
+
+	<p>
+	This is a research-oriented course. An ideal outcome of this course is a research paper that can be submitted to a top-tier robotics venue. During the course, each student is expected to identify a research question and make progress towards solving it. The course project will be the medium through which we will facilitate that.  It is perfectly okay if you cannot solve the problem in its entirety during the class, however, you must demonstrate sufficient effort and progress.
+</p>
+
+<p>
+	The project can be done in groups of up to four students. Students are encouraged to work on a project that connects the material covered in this course with their existing research.
+</p>
+
+	<p>There will be several milestones during the course which will all count towards the points reserved for the project.
+		<ul>
+			<li>Pitch: Students will record and post a short narrated, presentation describing their initial ideas. We will use this to form project groups as well as get feedback from your peers.</li>
+			<li>Proposal: After the pitch, students will submit a short two page extended abstract describing the proposed research project. This report will be an Overleaf document that will be updated throughout the semester and evolve into the final project report.</li>
+			<li>Updates: We will have several check-ins throughout the semester. These will be during office hours with the TA and instructor, during lectures, as well as a short narrated, presentation that will be posted for the rest of the class and peer-reviewed.</li>
+			<li>Presentation: At the end of the course, we will have a virtual poster presentation where teams will present the final results. We may have guest judges to award prizes for the best posters/projects.</li>
+			<li>Report: The final report must be in the style of a conference paper.</li>
+		</ul>
+	</p>
+</div>
+
+<div class="panel">
+	<a id="miniproj"></a>
+	<h2 class="section">Mini-Projects</h2>
+	<p>
+		There will be two mini-projects. You are expected to work on these for roughly 4 weeks each. The mini-projects must be done in groups of  2 students.
+		<ul>
+			<li>Create a tutorial on a topic <i>related</i> to decision-making for robotics that will not be directly covered in class (due end of September). Ideally, these are topics that are useful in robot decision-making AND one that you are familiar with from a previous class. Example topics will be posted shortly. The tutorial must be in the style of a blogpost or a Wikipedia article and will be linked on the class webpage.</li>
+			<li>Implement algorithm(s) from a research paper that we discuss in class or one of your choice after approval from the instructor (due end of October). The goal of this mini-project could to be (a) reproduce the results in the paper; (b) evaluate the algorithms to a new dataset; or (c) implement the algorithms in the paper in a novel setting. In all cases, the emphasis will be on discussing the results and the challenges associated with reproducibility.</li>
+		</ul>
+	</p>
+	<h3 class="section">Mini-Project 1 Webpages</h3>
+	<a id="miniproject1"></a>
+	<table border=1 frame=void rules=rows class="table table-bordered table-hover table-condensed">
+		<thead><tr><th title="Field #1">Project Title</th>
+			<th title="Field #2">Team Member 1</th>
+			<th title="Field #3">Team Member 2</th>
+		</tr></thead>
+		<tbody><tr>
+			<td height="30">
+				<a href="https://achalpvyas.github.io/mini_project1.html">Blossom Algorithm</a>
+			</td>
+			<td style="text-align:center">Achal Vyas</td>
+			<td style="text-align:center">Pruthvikumar Sanghavi</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://shubham1925.github.io/Kalman-Filter/">Kalman-Filter</a>
+			</td>
+			<td style="text-align:center">Shubham Sonawane</td>
+			<td style="text-align:center">Raj Shinde</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://medium.com/@toyasdhake/decision-making-in-robotics-using-evolutionary-neural-networks-33293f5286a9">Decision-Making in Robotics using Evolutionary Neural Networks</a>
+			</td>
+			<td style="text-align:center">Umang Rastogi</td>
+			<td style="text-align:center">Toyas Dhake</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://en.wikipedia.org/wiki/Draft:Multiple-Object_Tracking_using_JPDAF">Multiple-Object Tracking using JPDAF</a>
+			</td>
+			<td style="text-align:center">Revati Naik</td>
+			<td style="text-align:center">Sneha Ganesh Nayak </td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://avirmani.com/robotics/slam-overview-applications-and-challenges-in-robotics/">SLAM: Overview, Applications And Challenges In Robotics</a>
+			</td>
+			<td style="text-align:center">Divya Kothandaraman</td>
+			<td style="text-align:center">Aman Virmani</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/terpmail.umd.edu/robustmpc/">Robust Model Predictive Control (Robust-MPC)</a>
+			</td>
+			<td style="text-align:center">Chethana Nilesh Suriyarachchi</td>
+			<td style="text-align:center">Muhammad Faizan Tariq</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/umd.edu/cmsc818bminiproject1fall2020/home">Model Predictive Control</a>
+			</td>
+			<td style="text-align:center">Charles Meehan</td>
+			<td style="text-align:center">Zirui Xu</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/view/bayesian-rl/">Model Based Bayesian RL</a>
+			</td>
+			<td style="text-align:center">Akwasi A Obeng</td>
+			<td style="text-align:center">Shesh Mali</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://github.com/adigoswami/MiniProject1/wiki/Mini-Project-1">Mini Project 1</a>
+			</td>
+			<td style="text-align:center">Lampros Mertzanis</td>
+			<td style="text-align:center">Aditya Goswami</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://medium.com/@angelosm_15341/an-overview-of-the-traveling-salesman-problem-tsp-1469d4d39d7c?source=friends_link&sk=cc039d09bff2fa171f8b1792f6c24847">An Overview of the Traveling Salesman Problem (TSP)</a>
+			</td>
+			<td style="text-align:center">Angelos Mavrogiannis</td>
+			<td style="text-align:center">Sandeep Kota Sai Pavan</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://en.wikipedia.org/wiki/Draft:SLAM_for_Decision_Making">SLAM for Decision Making</a>
+			</td>
+			<td style="text-align:center">Naman Gupta</td>
+			<td style="text-align:center">Patan Sanaulla Khan</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/umd.edu/cmsc-818b-mini-project-1/home">Semantic Segmentation</a>
+			</td>
+			<td style="text-align:center">Kulbir Singh Ahluwalia</td>
+			<td style="text-align:center">Vishnu Dutt Sharma</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/terpmail.umd.edu/particle-filterrltutorial/home">Particle Filter and its Applications in Robotic Decision Making</a>
+			</td>
+			<td style="text-align:center">Jingxi Chen </td>
+			<td style="text-align:center">Md Ishat-E-Rabban</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://medium.com/@get2moumita/object-detection-3192ab75f931">Multiple-Object Tracking using JPDAF</a>
+			</td>
+			<td style="text-align:center">Yash Savle</td>
+			<td style="text-align:center">Moumita Paul</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/terpmail.umd.edu/818b-miniproject-1/home">Object Detection in Robotic Systems: A Holistic Perpective</a>
+			</td>
+			<td style="text-align:center">Amartya Banerjee</td>
+			<td style="text-align:center">Aditya Khopkar</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://en.wikipedia.org/wiki/Draft:Kalman_Filter:_SLAM">Kalman Filter: SLAM</a>
+			</td>
+			<td style="text-align:center">Varun Asthana</td>
+			<td style="text-align:center">Saumil Shah</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/view/818bminiproject1/home">Occupancy Grid Mapping</a>
+			</td>
+			<td style="text-align:center">Clifford Bakalian</td>
+			<td style="text-align:center">Justin Goodman</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/terpmail.umd.edu/cmsc818b-mini-pro1kalmanfilter/home">Kalman Filter</a>
+			</td>
+			<td style="text-align:center">Smriti Gupta</td>
+			<td style="text-align:center">Ophir Gal</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://medium.com/@arjunsrinivasan.a/interaction-and-decision-making-in-autonomous-driving-workshop-rss-2020-a-summary-b25d77f59584">Interaction and Decision Making in Autonomous Driving Workshop- RSS 2020 a Summary</a>
+			</td>
+			<td style="text-align:center">Arjun Srinivasan Ambalam</td>
+			<td style="text-align:center">Prasheel Renkuntla</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://manikamakam.github.io/SLAM/">Active SLAM</a>
+			</td>
+			<td style="text-align:center">Pradeep Gopal</td>
+			<td style="text-align:center">Sri Manika Makam</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/view/intro-to-slam/home">Simultaneous Localization and Mapping (SLAM)</a>
+			</td>
+			<td style="text-align:center">Kartik Venkat</td>
+			<td style="text-align:center">Kushagra Agrawal</td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/view/robotsinvr/home">Handling Virtual and Physical Constraints for Human-Robot Interaction</a>
+			</td>
+			<td style="text-align:center">Nicholas Rewkowski</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://sites.google.com/view/cmsc818bminiproject1/home">Semantic Segmentation with applications to robotics</a>
+			</td>
+			<td style="text-align:center">Zhiyuan Hua</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td height="30">
+				<a href="https://usmanaminfiaz.us/tutorial-tl-based-planning">Temporal Logic-Based Planning: A Brief Tutorial</a>
+			</td>
+			<td style="text-align:center">Usman A. Fiaz</td>
+			<td> </td>
+		</tr>
+	</tbody></table>
+
+	<h3 class="section">Mini-Project 2 Webpages</h3>
+	<a id="miniproject2"></a>
+	<table border=1 frame=void rules=rows class="table table-bordered table-hover table-condensed">
+		<colgroup>
+			<col span="1" style="width: 40%;">
+			<col span="1" style="width: 15%;">
+			<col span="1" style="width: 15%;">
+			<col span="1" style="width: 15%;">
+			<col span="1" style="width: 15%;">
+		</colgroup>
+		<thead><tr><th title="Field #1">Project Title</th>
+			<th title="Field #2">Team Member 1</th>
+			<th title="Field #3">Team Member 2</th>
+			<th title="Field #4">Team Member 3</th>
+			<th title="Field #5">Team Member 4</th>
+		</tr></thead>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/view/miniproject2/home">Persistent Monitoring Problem with Multiple UGVs</a>
+			</td>
+			<td style="text-align:center">Md Ishat E Rabban</td>
+			<td style="text-align:center">Jingxi Chen</td>
+			<td style="text-align:center">Vishnu Dutt Sharma</td>
+			<td style="text-align:center">Kulbir Singh Ahluwalia</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://yashsavle.github.io/Flocking-in-Fixed-and-Switching-Networks/">Flocking-in-Fixed-and-Switching-Networks</a>
+			</td>
+			<td style="text-align:center">Shubham Sonawane</td>
+			<td style="text-align:center">Raj Shinde</td>
+			<td style="text-align:center">Yash Savle</td>
+			<td style="text-align:center">Moumita Paul</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/umd.edu/cmsc818bmini-project2-group7/home">Implementation of the Autonomous Robotic Exploration Based on Multiple Rapidly-exploring Randomized Trees Paper</a>
+			</td>
+			<td style="text-align:center">Charles Meehan</td>
+			<td style="text-align:center">Nilesh Suriyarachchi</td>
+			<td style="text-align:center">Faizan Tariq</td>
+			<td style="text-align:center">Achal Vyas</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://pradeepgopal1997.medium.com/mini-project-2-2cafa300895c">Implementation of Decision Making Algorithms in OpenAI Parking Environment</a>
+			</td>
+			<td style="text-align:center">Aman Virmani</td>
+			<td style="text-align:center">Divya Kothandaraman</td>
+			<td style="text-align:center">Pradeep Gopal</td>
+			<td style="text-align:center">Sri Manika Makam</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/view/motion-prediction-lyftl5/home#h.k0ur80cj6vwb">Interaction-aware Trajectory Prediction on Lyft L5 Dataset</a>
+			</td>
+			<td style="text-align:center">Kushagra Agrawal</td>
+			<td style="text-align:center">Aditya Khopkar</td>
+			<td style="text-align:center">Kartik Venkat</td>
+			<td style="text-align:center">Patan Sanaulla Khan</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/terpmail.umd.edu/dqn-for-uav/home">Uncertainty Estimation in Deep Learning Networks</a>
+			</td>
+			<td style="text-align:center">Varun Asthana</td>
+			<td style="text-align:center">Saumil Shah</td>
+			<td style="text-align:center">Sneha Nayak</td>
+			<td style="text-align:center">Revati Naik</td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/terpmail.umd.edu/miniproj-2/">Pick and Place using Deep Reinforcement Learning</a>
+			</td>
+			<td style="text-align:center">Amartya Banerjee</td>
+			<td style="text-align:center">Sandeep Kota Sai Pavan</td>
+			<td style="text-align:center">Angelos Mavrogiannis</td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/umd.edu/cmsc818bminiproj2f20/home">Risk-Neutral Multi-Robot Planning for Target Tracking</a>
+			</td>
+			<td style="text-align:center">Zirui Xu</td>
+			<td style="text-align:center">Naman Gupta</td>
+			<td style="text-align:center">Akwasi Obeng</td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/view/autorl/home">Autonomous Driving Behavior through Reinforcement Leaning</a>
+			</td>
+			<td style="text-align:center">Arjun Srinivasan Ambalam</td>
+			<td style="text-align:center">Prasheel Renkuntla</td>
+			<td style="text-align:center">Zhiyuan Hua</td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://github.com/urastogi885/multi-robot-mpnet/wiki/Implementation-of-dRRT*">Implementation of dRRT*</a>
+			</td>
+			<td style="text-align:center">Umang Rastogi</td>
+			<td style="text-align:center">Toyas Dhake</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://github.com/adigoswami/Mini_Project_2/wiki/Mini-Project-2">Mini Project 2</a>
+			</td>
+			<td style="text-align:center">Aditya Goswami</td>
+			<td style="text-align:center">Lambros Mertzanis</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/terpmail.umd.edu/miniproject2-broil/home">Bayesian Robust Optimization for Imitation Learning</a>
+			</td>
+			<td style="text-align:center">Smriti Gupta</td>
+			<td style="text-align:center">Shesh Mali</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/view/818bminiproject2/home">Reproducing 'Sounds Good'</a>
+			</td>
+			<td style="text-align:center">Clifford Bakalian</td>
+			<td style="text-align:center">Justin Goodman</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://sites.google.com/view/nickminiproject2/home">Stress Testing Model Predictive Control in Game Engines and Noisy Environments</a>
+			</td>
+			<td style="text-align:center">Nick Rewkowski</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://www.ophirgal.com/projects/miniproj2/miniproj2">CMSC818B Mini-Project 2, UMD, Fall ’20</a>
+			</td>
+			<td style="text-align:center">Ophir Gal</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://pruthvi-sanghavi.github.io/miniproject2.html">Optimizing Drone Deliveries and Shared E Scooter fleets Using Transit Networks</a>
+			</td>
+			<td style="text-align:center">Pruthvi S. Sanghavi</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tbody><tr>
+			<td height="50">
+				<a href="https://usmanaminfiaz.us/orb-slam2-evaluation">Evaluation of ORB-SLAM2 on Custom RGB-D Dataset</a>
+			</td>
+			<td style="text-align:center">Usman A. Fiaz</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+	</tbody></table>
+</div>
+
+<div class="panel">
+	<a id="assignments"></a>
+	<h2 class="section">Assignments</h2>
+	<p>
+		The assignments will be a mix of hands-on implementation exercises as well theory questions. We will have 3-4 assignments and typically due within 10 days of posting.
+	</p>
+</div>
+
+<div class="panel">
+	<a id="presentations"></a>
+	<h2 class="section">Paper Presentations</h2>
+	<p>
+	Each student will lead the discussion on research papers during the semester. You may choose a paper from the list given <a href="https://docs.google.com/spreadsheets/d/1xpviCgSuHoV9GY1iR-wPWRSTkZcDcw24ju08hqVcB2g/edit?usp=sharing">here</a>.
+	</p>
+</div>
+
+<div class="panel">
+	<a id="participation"></a>
+	<h2 class="section">Class Participation</h2>
+	<p>
+	While the lectures will be conducted synchronously, the participation points are reserved only for the asynchronous component. These points will be awarded for being active in the class discussion forum (Piazza), scribing lecture notes, and peer review of project proposals and mini-projects.
+	</p>
+</div-->
+
+<div class="panel">
+	<a id="prereq"></a>
+	<h2 class="section">Prerequisites</h2>
+	<p>
+	This is a seminar-style course that will feature a discussion of research papers. An ability to read and critique research papers is required.
+	</p>
+
+	<p>
+	There are no explicit prerequisites. <font color="red">However, students should be very comfortable in at least two of the following areas: Probability and Bayesian Statistics; Algorithms; Machine Learning/AI; Optimization.</font>
+	</p>
+
+	<p>
+	We will mostly use Python for implementation. Some level of comfort using Python would be good but is not a requirement. It is expected that you will be able to pick up the basics needed for the assignments.
+	</p>
+
+	<p>
+	Prior background in robotics is helpful, but not required.
+	</p>
+</div>
+
+<div class="panel">
+	<h2 class="section">Academic Integrity</h2>
+
+	<p>The CS Department takes academic integrity seriously. Information on how the CS Department views and handle academic integrity matters can be found at <a href="http://www.cs.umd.edu/class/resources/academicIntegrity.html">Academic Integrity</a>.</p>
+
+	<p>Note that academic dishonesty includes not only cheating, fabrication, and plagiarism, but also includes helping other students commit acts of academic dishonesty by allowing them to obtain copies of your work. In short, all submitted work must be your own. Cases of academic dishonesty will be pursued to the fullest extent possible as stipulated by the Office of Student Conduct.</p>
+
+	<p>It is very important for you to be aware of the consequences of cheating, fabrication, facilitation, and plagiarism. For more information on the Code of Academic Integrity or the Student Honor Council, please visit http://www.shc.umd.edu.</p>
+
+	<p>On any graded exam or assignments, you are NOT allowed to collaborate or exchange code. We compare each student's code with every other student's code to check for similarities. Every semester, we catch an embarrassingly high number of students that engage in cheating and we have to take them to the Honor Council.</p>
+
+	<p>You may post your project code to private Github (or similar service) repos only. As a student, you can make a private repo for free. Just remember that your free premium subscription has an expiry date, and your code becomes public once it expires. The Honor Council can retroactively give an XF (even to students who have already graduated) if your code is then used by another student to cheat. So just be careful. Posting graded code meant for an assignment to a public repo will give you a free ticket to the Honor Council.</p>
+
+	<p>We encourage students to talk about course material and help each other out in group chats and discussion forums. However, this does NOT include graded assignments. Talking about release tests is NOT okay. </p>
+</div>
+
+<div class="panel">
+	<h2 class="section">Excused Absences</h2>
+	<p>
+		Any student who needs to be excused for an absence from a single lecture, recitation, or lab due to a medically necessitated absence shall make a reasonable attempt to inform the instructor of his/her illness prior to the class. Upon returning to the class, present their instructor with a self-signed note attesting to the date of their illness.  Each note must contain an acknowledgment by the student that the information provided is true and correct.  Providing false information to University officials is prohibited under Part 9(i) of the Code of Student Conduct (V-1.00(B) University of Maryland Code of Student Conduct) and may result in disciplinary action.
+	</p>
+
+	<!--p>Students are not obligated to provide documentation from the University Health Center,
+from their physician, or from another source to verify an absence or missed due date for an
+assignment. The student should send an e-mail or a Piazza note to the  instructor, explaining the absence,
+the dates missed, and a statement that the information is accurate and that they recognize the
+expectations in the University of Maryland Code of Student Conduct (V-1.00[B]). Students
+may use this template to certify their absence. The take-home mid-semester exam is the only major graded event. Other assignments and projects have a longer lead-time for which extensions may be provided to make up for lost time. Instructors may consider re-weighting of course assessments, along with providing alternative assignments and make-up work, as ways to accommodate missed exam or other graded work to allow a student to meaningfully proceed through the course.
+</p-->
+	<p>
+	</p>
+</div>
+
+<div class="panel">
+	<h2 class="section">Services for Students with Disabilities</h2>
+	<p>
+	Any student who feels that they may need an accommodation because of a disability (learning disability, attention deficit disorder, psychological, physical, etc.), please make an appointment to see the instructor during office hours or contact via e-mail or private Piazza post.
+	</p>
+</div>
+
+</body>
+
+</html>
