@@ -39,7 +39,7 @@
 <div class="panel">
 	<h2 class="section">Description</h2>
 	<p>
-	This course will focus on the principles of decision-making in robotics. <a href="http://www.cs.umd.edu/class/spring2019/cmsc818N/">Motion planning </a> focuses on the problem of <i>how</i> to go from point A to point B. In this course, we will examine higher-level algorithms that <i>make decisions</i> as to what points A and B should be depending on the task at hand. In standard motion planning, the goal location is given as input. In constrast, in the decision-making problems we will consider in this course, the goal locations(s) will be the output. In fact, most scenarios we will study require making sequential decisions where the output is a series of goal location(s) (or actions or tasks and so on) and where decisions we make in the past may influence the options available at a future instance.</p>
+	This course will focus on the principles of decision-making in robotics. <a href="http://www.cs.umd.edu/class/spring2019/cmsc818N/">Motion planning </a> focuses on the problem of <i>how</i> to go from point A to point B. In this course, we will examine higher-level algorithms that <i>make decisions</i> as to what points A and B should be depending on the task at hand.</p>
 
 <p>Most of the lectures will be based on research papers and discussion of open research problems. The students will also work on a research-oriented course project. The goal of the course is to understand, critique, and implement research papers, identify open problems, and make progress towards solving them. An ideal outcome is for students to write a research paper at the end of the course.
 	</p>
@@ -64,13 +64,13 @@
 <div class="panel">
 	<a id="schedule"></a>
 	<h2 class="section">Schedule</h2>
-	<p>Class schedule given <a href="https://docs.google.com/spreadsheets/d/1nVgOLriTfZQcolewX2LLshUYpp9bonA5T7W-pKR4X5I/edit?usp=sharing">here</a>.</p>
+	<p>Class schedule given <a href="https://docs.google.com/spreadsheets/d/1MKUOxYzfp6a_yniIt-C5oWxksMlzksJRMRz-QktyI0M/edit?usp=sharing">here</a>.</p>
 
 	<p>
-	Topics that will be covered include (but are not limited to): <i>Foundation Models for Robotics; Pre-training for Large Scale Learning; Joint Perception and Planning; Differentiable Optimization; Deep reinforcement learning; Graph Neural Networks; Information-Theoretic Path Planning (mutual information, entropy, submodularity); Active Perception.</i></p>
+	Topics that will be covered include (but are not limited to): <i>MDPs, POMDPs, Reinforcement Learning, Learning from Human Feedback (Imitation Learning, Inverse RL, Learning from Demonstration), Multi-Agent Coordination and RL, Differentiable Optimization, Differentiable Filtering, NeRFs, Learning Control Barrier Functions, Safety.</i></p>
 </div>
 
-<!--div class="panel">
+<div class="panel">
 	<a id="grading"></a>
 	<h2 class="section">Grading</h2>
 	<p>This is still tentative and subject to change. Evaluation will be composed of the following:
@@ -88,20 +88,9 @@
 				<li>Mini-project 1 (10%)</li>
 				<li>Mini-project 2 (10%)</li>
 			</ul>
-		<li><b>Assignments (5%)</b></li>
+		<li><b>Assignments (10%)</b></li>
 		<li><b>Presentation (10%)</b></li>
-			<ul>
-				<li>Post summary (2%)</li>
-				<li>Post draft video (2%)</li>
-				<li>Actual presentation (6%)</li>
-			</ul>
-		<li><b>Class participation (10%)</b></li>
-			<ul>
-				<li>Post questions on 5 summaries before presentations (5%)</li>
-				<li>Peer review mini-project 1 (1%)</li>
-				<li>Peer review mini-project 2 (1%)</li>
-				<li>Peer review project presentation (3%)</li>
-			</ul>
+		<li><b>Class participation (5%)</b></li>
 	</ul>
 	Details of each are given below.
 	</p>
@@ -112,7 +101,7 @@
 	<h2 class="section">Exam</h2>
 
 	<p>
-	This will be in the style of a take-home exam. You will be given 1-2 days (subject to change) to solve the exam and upload your solutions. The exam will likely be in November.
+	This will be in the style of a take-home exam. The exam will likely be in November.
 </p>
 </div>
 
@@ -149,7 +138,7 @@
 			<li>Implement algorithm(s) from a research paper that we discuss in class or one of your choice after approval from the instructor (due end of October). The goal of this mini-project could to be (a) reproduce the results in the paper; (b) evaluate the algorithms to a new dataset; or (c) implement the algorithms in the paper in a novel setting. In all cases, the emphasis will be on discussing the results and the challenges associated with reproducibility.</li>
 		</ul>
 	</p>
-	<h3 class="section">Mini-Project 1 Webpages</h3>
+	<!--h3 class="section">Mini-Project 1 Webpages</h3>
 	<a id="miniproject1"></a>
 	<table border=1 frame=void rules=rows class="table table-bordered table-hover table-condensed">
 		<thead><tr><th title="Field #1">Project Title</th>
@@ -495,14 +484,14 @@
 			<td> </td>
 			<td> </td>
 		</tr>
-	</tbody></table>
+	</tbody></table-->
 </div>
 
 <div class="panel">
 	<a id="assignments"></a>
 	<h2 class="section">Assignments</h2>
 	<p>
-		The assignments will be a mix of hands-on implementation exercises as well theory questions. We will have 3-4 assignments and typically due within 10 days of posting.
+		The assignments will be a mix of hands-on implementation exercises as well theory questions. We will have 2-3 assignments and typically due within 10 days of posting.
 	</p>
 </div>
 
@@ -510,7 +499,7 @@
 	<a id="presentations"></a>
 	<h2 class="section">Paper Presentations</h2>
 	<p>
-	Each student will lead the discussion on research papers during the semester. You may choose a paper from the list given <a href="https://docs.google.com/spreadsheets/d/1xpviCgSuHoV9GY1iR-wPWRSTkZcDcw24ju08hqVcB2g/edit?usp=sharing">here</a>.
+	Each student will lead the discussion on research papers during the semester. You may choose a paper from the list given <a href="">here</a>.
 	</p>
 </div>
 
@@ -518,7 +507,7 @@
 	<a id="participation"></a>
 	<h2 class="section">Class Participation</h2>
 	<p>
-	While the lectures will be conducted synchronously, the participation points are reserved only for the asynchronous component. These points will be awarded for being active in the class discussion forum (Piazza), scribing lecture notes, and peer review of project proposals and mini-projects.
+	These points will be awarded for being active in the class, on the discussion forum (Piazza/Slack), scribing lecture notes, and peer review of project proposals and mini-projects.
 	</p>
 </div-->
 
